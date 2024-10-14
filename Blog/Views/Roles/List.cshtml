@@ -1,0 +1,47 @@
+﻿@model List<Blog.Models.ViewModels.RoleViewModel>
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Show all Roles - Admin Functionality</h1>
+    </div>
+</div>
+
+
+<div class="container mt-3">
+    @if (Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>
+                        Name
+                    </th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var role in Model)
+                {
+                    <tr>
+                        <td>@role.Id</td>
+                        <td>@role.Name</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    }
+    else
+    {
+        <p>No roles found!</p>
+    }
+</div>
